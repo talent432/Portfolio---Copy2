@@ -279,6 +279,11 @@ h1 {
 .certificate h3, .award h3, .course h3 {
     font-size: 1.2rem;
     color: #333;
+    margin-bottom: 10px;
+}
+
+.certificate p, .award p, .course p {
+    display: none;
 }
 
 /* Modal Styling */
@@ -301,6 +306,20 @@ h1 {
     width: 80%;
     max-width: 600px;
     text-align: center;
+    color: #333;
+}
+
+#modal-description {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    padding: 15px 0;
+}
+
+.modal-content h2 {
+    color: #333;
+    margin-bottom: 15px;
 }
 
 .close-modal {

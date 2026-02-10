@@ -98,16 +98,22 @@
 
 <h4>Skills & Strenghts:</h4>
 <ul>
-    <li>______________</li>
-    <li>______________</li>
-    <li>______________</li>
+    <li>Full Stack Web Development (HTML, CSS, JavaScript, React, Node.js)</li>
+    <li>Problem-solving and Analytical Thinking</li>
+    <li>Database Design and Management (SQL, MongoDB)</li>
+    <li>Cloud Technologies (AWS, Azure)</li>
+    <li>Team Collaboration and Communication</li>
+    <li>Rapid Learning and Adaptability</li>
 </ul>
 
 <h4>Values/Philosophy:</h4>
 <ul>
-    <li>______________</li>
-    <li>______________</li>
-    <li>______________</li>
+    <li>Continuous Learning - Always seeking new knowledge and self-improvement in technology</li>
+    <li>Quality & Excellence - Delivering high-quality code and solutions that exceed expectations</li>
+    <li>Innovation - Thinking creatively to solve problems and build meaningful applications</li>
+    <li>Integrity - Maintaining ethical standards and honest communication in all endeavors</li>
+    <li>Collaboration - Believing in the power of teamwork and open knowledge sharing</li>
+    <li>Perseverance - Staying committed to goals despite challenges and setbacks</li>
 </ul>
 
 
@@ -245,9 +251,23 @@
             <div class="certificates">
                 <div class="certificate" data-type="certificates" data-id="cert1">
                     <h3>Certified Java Developer</h3>
+                    <p>Completed intensive Java bootcamp and passed Oracle certification exam with 92% score.</p>
                 </div>
                 <div class="certificate" data-type="certificates" data-id="cert2">
                     <h3>Google Analytics Certified</h3>
+                    <p>Participated in Google Digital Garage training and completed comprehensive analytics assessment.</p>
+                </div>
+                <div class="certificate" data-type="certificates" data-id="cert3">
+                    <h3>AWS Solutions Architect</h3>
+                    <p>Completed hands-on AWS training course and passed professional architect certification exam.</p>
+                </div>
+                <div class="certificate" data-type="certificates" data-id="cert4">
+                    <h3>Python Professional Certified</h3>
+                    <p>Successfully completed Python advanced programming course through Coursera with honors.</p>
+                </div>
+                <div class="certificate" data-type="certificates" data-id="cert5">
+                    <h3>Full Stack Web Development</h3>
+                    <p>Finished comprehensive bootcamp covering React, Node.js, databases, and deployment practices.</p>
                 </div>
             </div>
 
@@ -255,9 +275,23 @@
             <div class="awards">
                 <div class="award" data-type="awards" data-id="award1">
                     <h3>Best Thesis Award</h3>
+                    <p>Recognized for groundbreaking research on machine learning optimization techniques.</p>
                 </div>
                 <div class="award" data-type="awards" data-id="award2">
                     <h3>Academic Excellence Award</h3>
+                    <p>Awarded for maintaining distinction across all academic disciplines and consistent top performance.</p>
+                </div>
+                <div class="award" data-type="awards" data-id="award3">
+                    <h3>Dean's List Honor</h3>
+                    <p>Achieved Dean's List status through sustained academic excellence and participation in research projects.</p>
+                </div>
+                <div class="award" data-type="awards" data-id="award4">
+                    <h3>Innovation in Technology Award</h3>
+                    <p>Developed AI-powered mobile app that won university innovation competition with industry recognition.</p>
+                </div>
+                <div class="award" data-type="awards" data-id="award5">
+                    <h3>Student Leadership Excellence</h3>
+                    <p>Selected as student ambassador for mentoring junior cohorts and leading tech workshops.</p>
                 </div>
             </div>
 
@@ -309,26 +343,11 @@
         const items = document.querySelectorAll('.certificate, .award, .course');
         items.forEach(item => {
             item.addEventListener('click', () => {
-                const type = item.getAttribute('data-type');
-                const id = item.getAttribute('data-id');
-                let description = '';
+                const title = item.querySelector('h3').textContent;
+                const eventText = item.querySelector('p').textContent;
+                const description = `<strong>${title}</strong><br><br>${eventText}`;
 
-                // Set the description based on item clicked
-                if (type === 'certificates' && id === 'cert1') {
-                    description = 'This certification demonstrates proficiency in Java programming, covering core concepts and advanced topics.';
-                } else if (type === 'certificates' && id === 'cert2') {
-                    description = 'Google Analytics certification showing the ability to use the platform for digital marketing analytics.';
-                } else if (type === 'awards' && id === 'award1') {
-                    description = 'Awarded for outstanding research and thesis writing in the field of artificial intelligence.';
-                } else if (type === 'awards' && id === 'award2') {
-                    description = 'Recognized for maintaining a 4.0 GPA and excelling in academic performance throughout my undergraduate studies.';
-                } else if (type === 'courses' && id === 'course1') {
-                    description = 'A comprehensive course on machine learning, covering supervised and unsupervised learning techniques.';
-                } else if (type === 'courses' && id === 'course2') {
-                    description = 'Course focused on data structures such as linked lists, trees, and graphs, critical for computer science.';
-                }
-
-                modalDescription.textContent = description;
+                modalDescription.innerHTML = description;
                 modal.style.display = 'flex';
             });
         });
